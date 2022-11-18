@@ -1,7 +1,7 @@
 import { NextPage } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { BsFillPauseFill, BsFillPlayFill } from 'react-icons/bs';
 import { GoVerified } from 'react-icons/go';
 import { HiVolumeOff, HiVolumeUp } from 'react-icons/hi';
@@ -27,6 +27,12 @@ const VideoCard: NextPage<IProps> = ({ post:{_id,postedBy,caption,comments,likes
       setPlaying(true);
     }
   };
+
+useEffect(()=>{
+if(videoRef.current){
+  videoRef.current.muted = isVideoMuted
+}
+},[isVideoMuted])
 
   return (
     <div className='flex flex-col border-b-2 border-gray-200 pb-6'>
