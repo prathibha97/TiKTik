@@ -56,11 +56,11 @@ if(videoRef.current){
             <Link href={`/profile/${postedBy?._id}`}>
               <div className='flex items-center gap-2'>
                 <p className='flex gap-2 items-center md:text-md font-bold text-primary'>
-                  {postedBy.userName}{' '}
+                  {postedBy.username}{' '}
                   <GoVerified className='text-blue-400 text-md' />
                 </p>
                 <p className='capitalize font-medium text-xs text-gray-500 hidden md:block'>
-                  {postedBy.userName}
+                  {postedBy.username}
                 </p>
               </div>
             </Link>
