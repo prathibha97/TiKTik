@@ -9,13 +9,13 @@ export interface Video {
   _id: string;
   postedBy: {
     _id: string;
-    username: string;
+    userName: string;
     image: string;
   };
   likes: {
     postedBy: {
       _id: string;
-      username: string;
+      userName: string;
       image: string;
     };
   }[];
@@ -32,6 +32,6 @@ export interface Video {
 export interface IUser {
   _id: string;
   _type: string;
-  username: string;
+  userName: string;
   image: string;
 }

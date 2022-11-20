@@ -11,7 +11,8 @@ interface IProps {
   post: Video;
 }
 
-const VideoCard: NextPage<IProps> = ({ post:{_id,postedBy,caption,comments,likes,userId,video} }) => {
+const VideoCard: NextPage<IProps> = ({ post:{_id,postedBy,caption,video} }) => {
+  console.log(postedBy)
   const [isHover, setIsHover] = useState(false);
   const [playing, setPlaying] = useState(false);
   const [isVideoMuted, setIsVideoMuted] = useState(false);
@@ -56,11 +57,11 @@ if(videoRef.current){
             <Link href={`/profile/${postedBy?._id}`}>
               <div className='flex items-center gap-2'>
                 <p className='flex gap-2 items-center md:text-md font-bold text-primary'>
-                  {postedBy.username}{' '}
+                  {postedBy?.userName}{' '}
                   <GoVerified className='text-blue-400 text-md' />
                 </p>
                 <p className='capitalize font-medium text-xs text-gray-500 hidden md:block'>
-                  {postedBy.username}
+                  {postedBy?.userName}
                 </p>
               </div>
             </Link>
